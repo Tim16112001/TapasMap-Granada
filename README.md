@@ -30,6 +30,20 @@ Full Hito 1 documentation is available in [`docs/hito1.md`](docs/hito1.md).
 
 ---
 
+## Hito 2 – Continuous Integration
+
+For Hito 2, the following tasks have been completed:
+
+- Set up virtual environment (`venv`) for Python project
+- Installed test framework `pytest` and configured dependencies in `requirements.txt`
+- Created a test file `tests/test_tracker.py` to verify the functionality of `add_bar` in `tapas.py`
+- Configured GitHub Actions workflow (`.github/workflows/python-tests.yml`) to automatically run tests on every push
+- Ran tests locally to ensure they pass successfully
+- Verified that tests run automatically in GitHub Actions (CI), as shown by the green check mark
+- Full Hito 2 documentation is available in `docs/hito2.md`
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
