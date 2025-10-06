@@ -1,0 +1,13 @@
+certifi==2023.7.22
+colorama==0.4.6
+distlib==0.3.7
+filelock==3.12.4
+iniconfig==2.1.0
+packaging==25.0
+pipenv==2023.10.3
+platformdirs==3.11.0
+pluggy==1.6.0
+Pygments==2.19.2
+pytest==8.4.2
+setuptools==68.2.2
+virtualenv==20.24.5
