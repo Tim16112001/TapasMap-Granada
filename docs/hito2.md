@@ -1,20 +1,28 @@
 # Hito 2 – Continuous Integration (CI)
 
-## Task Runner
-For this project, I used **pytest** as the test framework and **GitHub Actions** for CI.
-`pytest` was chosen because it is simple, powerful, and widely used for Python projects.
+1. Milestone Goal
+Implement Continuous Integration for the TapasMap project
+Add automated tests to ensure code quality
+Set up virtual environment and dependencies
+Document all Hito 2 steps
 
-## Assertion Library
-The built-in `assert` statements are used for simplicity.
+2. Virtual Environment Setup
+Created virtual environment using `python -m venv venv`
+Activated virtual environment
+Installed project dependencies listed in `requirements.txt`
+Installed `pytest` as the test framework
 
-## Test Runner
-`pytest` automatically discovers and runs all tests that start with `test_`.
-
-## CI System
-GitHub Actions was configured to automatically run the tests whenever code is pushed or a pull request is made. This ensures code quality and avoids integration errors.
-
-## Example Test
+3. Test Framework Setup
+Task Runner: `pytest` chosen for simplicity and wide usage in Python
+Assertion Library: Python's built-in `assert` statements used for checks
+Test Runner: `pytest` automatically discovers and runs all test functions starting with `test_`
+Example Test:
 ```python
-def test_sum():
-    result = 2 + 3
-    assert result == 5
+def test_add_bar():
+    from tapas import add_bar, tapas_bars
+    tapas_bars.clear()
+    result = add_bar("Bar Example", "Granada")
+    assert result is True
+    assert tapas_bars[0]["name"] == "Bar Example"
+    assert tapas_bars[0]["city"] == "Granada"
+
