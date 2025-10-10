@@ -42,8 +42,13 @@
       - Installs dependencies and runs pytest automatically
       - Ensures code quality and prevents integration issues
 5. **Screenshots**
-   - Local pytest result --> docs/images/pytest_result.png
-   - GitHub Actions workflow --> docs/images/github_actions.png
+   - Local pytest result --> docs/Screenshot pytest_result.png
+   - GitHub Actions workflow --> docs/Screenshot github_actions.png
+6. **Next Steps**
+   - Subsequent milestones will integrate additional features:
+     - Map integration
+     - User reviews
+     - Full cloud deployment
    
 
 
