@@ -33,5 +33,17 @@
             assert result is True
              assert tapas_bars[0]["name"] == "Bar Example"
             assert tapas_bars[0]["city"] == "Granada"
+4. **Continuous Integration (CI) Setup**
+   1. CI System
+      - GitHub Actions was configured for automatic test execution
+   2. Workflow
+      - Workflow file: .github/workflows/python-tests.yml
+      - Trigger: on push or pull request to main branch
+      - Installs dependencies and runs pytest automatically
+      - Ensures code quality and prevents integration issues
+5. **Screenshots**
+   - Local pytest result --> docs/images/pytest_result.png
+   - GitHub Actions workflow --> docs/images/github_actions.png
+   
 
 
