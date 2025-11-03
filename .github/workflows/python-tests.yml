@@ -20,4 +20,3 @@ jobs:
     - name: Install and test via Makefile
       run: |
         make ci
-
