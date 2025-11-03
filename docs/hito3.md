@@ -53,25 +53,7 @@ Business logic in `app/services/logic.py`, repository via DI (`InMemoryBarReposi
 
 ---
 
-## 7. Microservice Structure
-
-TapasMap-Granada/
-│
-├── app/
-│   ├── main.py              # FastAPI app + logging middleware
-│   ├── services/
-│   │   └── logic.py         # Business logic
-│   └── api/
-│       └── routes.py        # API routes + dependency injection
-│
-├── tests/
-│   ├── test_logic.py        # Unit tests for logic functions
-│   └── test_api.py          # API endpoint tests (FastAPI TestClient)
-│
-├── Makefile
-└── requirements.txt
-
-## 8.Evidence
+## 7.Evidence
 - CI run passed (green check)
 - screenshot in docs/images
 
