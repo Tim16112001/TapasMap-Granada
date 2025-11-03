@@ -54,7 +54,7 @@ For Hito 3, the following tasks have been completed:
 - Added API + logic tests with pytest
 - Introduced Makefile for unified local and CI execution
 - CI workflow now runs `make ci`
-- See full documentation: https://github.com/Tim16112001/TapasMap-Granada/blob/aaa9175a7543706747dd8fa584deccfcc7864e4e/docs/hito3.md 
+- See full documentation: 
 
 ## License
 
