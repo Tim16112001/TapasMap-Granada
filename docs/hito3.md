@@ -55,6 +55,6 @@ Business logic in `app/services/logic.py`, repository via DI (`InMemoryBarReposi
 
 ## 7.Evidence
 - CI run passed (green check)
-- Screenshot: 
+- Screenshot: ![Test Result Screenshot](docs/Screenshot%20CI%20run%20passsed.png)
 
 
