@@ -44,6 +44,18 @@ For Hito 2, the following tasks have been completed:
 
 ---
 
+## Hito 3 – Microservices
+
+For Hito 3, the following tasks have been completed:
+
+- Added FastAPI microservice with REST endpoints
+- Separated API and business logic via dependency injection
+- Implemented logging middleware
+- Added API + logic tests with pytest
+- Introduced Makefile for unified local and CI execution
+- CI workflow now runs `make ci`
+- See full documentation: `docs/hito3.md`
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
