@@ -40,7 +40,7 @@ For Hito 2, the following tasks have been completed:
 - Configured GitHub Actions workflow (`.github/workflows/python-tests.yml`) to automatically run tests on every push
 - Ran tests locally to ensure they pass successfully
 - Verified that tests run automatically in GitHub Actions (CI), as shown by the green check mark
-- Full Hito 2 documentation is available in `docs/hito2.md`
+- Full Hito 2 documentation is available in [`docs/hito2.md`](docs/hito2.md)
 
 ---
 
@@ -54,7 +54,7 @@ For Hito 3, the following tasks have been completed:
 - Added API + logic tests with pytest
 - Introduced Makefile for unified local and CI execution
 - CI workflow now runs `make ci`
-- See full documentation: docs/hito3.md
+- See full documentation: [`docs/hito3.md`](docs/hito3.md)
 
 ## License
 
