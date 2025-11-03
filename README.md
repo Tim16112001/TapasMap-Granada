@@ -44,7 +44,7 @@ For Hito 2, the following tasks have been completed:
 
 ---
 
-## Hito 3 – Microservices
+## Hito 3 – Microservice
 
 For Hito 3, the following tasks have been completed:
 
