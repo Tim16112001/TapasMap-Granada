@@ -54,7 +54,7 @@ For Hito 3, the following tasks have been completed:
 - Added API + logic tests with pytest
 - Introduced Makefile for unified local and CI execution
 - CI workflow now runs `make ci`
-- See full documentation: 
+- See full documentation: docs/hito3.md
 
 ## License
 
