@@ -15,10 +15,10 @@
 ## 2. Technical Choices (Justification)
 
 - **Framework:** FastAPI (simple, fast, DI built-in, automatic docs)
-- **Test Runner:** pytest (widely used, minimal setup)
-- **Assertions:** Python `assert`
-- **Task Runner:** Makefile (`make ci` used in CI)
-- **Logging:** Python `logging` + middleware for request start/end and status
+- **Test Runner:** pytest (widely used, easy, already used in Hito 2)
+- **Assertions:** Python `assert` (Simple and native)
+- **Task Runner:** Makefile ( Standard DevOps practice, used by CI)
+- **Logging:** Python `logging` + FastAPI middleware, Unified structured logs
 
 ---
 
@@ -27,18 +27,39 @@
 - `POST /api/bars` → create a bar (`name`, `city`) → returns `201` with `{id,name,city}`
 - `GET  /api/bars` → list all bars → `{ "items": [ ... ] }`
 
-Business logic in `app/services/logic.py`, repository via DI (`InMemoryBarRepository`).
+- API file: `app/api/routes.py`
+- Logic file: `app/services/logic.py`
+- Dependency injection for repository
 
 ---
 
-## 4. Logging
-
-- Central config in `app/core/logging_config.py`
-- Request middleware logs method, path, status
+## 4. Architecture / Project Structure
+TapasMap-Granada/
+├── app/
+│ ├── main.py
+│ ├── api/
+│ │ └── routes.py
+│ ├── services/
+│ │ └── logic.py
+│ └── core/
+│ └── logging_config.py
+├── tests/
+│ ├── test_logic.py
+│ └── test_api.py
+├── Makefile
+├── requirements.txt
+└── docs/
+└── hito3.md
 
 ---
 
-## 5. Tests
+## 5. Logging
+
+- Middleware logs request start/end and status code
+- Central configuration in `app/core/logging_config.py`
+- Helps debugging and observability
+
+## 6. Tests
 
 - Logic: `tests/test_logic.py`
 - API: `tests/test_api.py` (uses `with TestClient(app)` to ensure lifespan)
@@ -47,14 +68,29 @@ Business logic in `app/services/logic.py`, repository via DI (`InMemoryBarReposi
 
 ---
 
-## 6. Build/Tasks
+## 7. Build & Automation
 
-- `Makefile` targets: `install`, `test`, `run`, `ci`
+Makefile commands:
+
+- `make install` → install dependencies  
+- `make test` → run tests  
+- `make ci` → install + test (used in GitHub Actions)
 
 ---
 
-## 7.Evidence
+## 8.Evidence
 - CI run passed (green check)
 - Screenshot: ![Test Result Screenshot](Screenshot%20CI%20run%20passsed.png)
+
+---
+
+## 9. Conclusion
+
+- Microservice created with FastAPI
+- API separate from business logic
+- Logging integrated
+- Tests cover logic and API
+- CI runs tests automatically via Makefile
+- Architecture follows microservice + dependency-injection design
 
 
