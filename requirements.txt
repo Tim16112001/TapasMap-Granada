@@ -11,3 +11,8 @@ Pygments==2.19.2
 pytest==8.4.2
 setuptools==68.2.2
 virtualenv==20.24.5
+fastapi
+uvicorn[standard]
+httpx
+pytest
+
