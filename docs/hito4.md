@@ -95,6 +95,8 @@ Screenshot - CI passed
 - CI configuration: .github/workflows/publish-image.yml,.github/workflows/compose-test.yml
 - Screenshots embedded directly (visible above)
 - Source repository linked from the GHCR package
+- Screenshot - Running Docker Containers
+  ![Running Containers](https://github.com/Tim16112001/TapasMap-Granada/blob/3995c3470ef82c702d7712847c37e8c26292c1f3/docs/docker_ps.png)
 
 ---
 
