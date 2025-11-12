@@ -4,7 +4,6 @@ Project: TapasMap – Community Tapas & Bar Tracker for Granada
 Student: Tim Severein  
 Email: tim.severein@stud.uni-due.de 
 Course: Cloud Computing: Fundamentos e Infraestructuras - 2526 (COMÚN)  
-Milestone: Hito 1
 
 ---
 
@@ -55,6 +54,18 @@ For Hito 3, the following tasks have been completed:
 - Introduced Makefile for unified local and CI execution
 - CI workflow now runs `make ci`
 - See full documentation: [`docs/hito3.md`](docs/hito3.md)
+
+---
+
+## Hito 4 – Service Composition (Docker & GHCR)
+
+For Hito 4, the following tasks have been completed:
+
+- Dockerfile for the FastAPI microservice (`python:3.12-slim`)
+- Multi-container setup via `compose.yaml` (API + PostgreSQL + Adminer)
+- Automatic image publishing to GHCR
+- CI workflows: build & push + compose cluster test
+- See full documentation: [docs/hito4.md](docs/hito4.md)
 
 ## License
 
