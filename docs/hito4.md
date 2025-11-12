@@ -66,7 +66,7 @@ Both appear as green checkmarks in the GitHub Actions tab.
 - Automatically built and published by GitHub Actions
 - Package is public and linked to the main repository
 - Screenshot - GHCR package
-  ![GHCR Package](../ghcr_package.png)
+  ![GHCR Package](https://github.com/Tim16112001/TapasMap-Granada/blob/1614335440d87cb623337c1fc624ccec7190ac78/docs/ghcr_package.png)
 
 ---
 
