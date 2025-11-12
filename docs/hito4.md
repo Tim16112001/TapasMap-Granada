@@ -38,8 +38,7 @@ Three-service cluster:
 2. **db** – PostgreSQL container for persistent data  
 3. **adminer** – simple database admin UI  
 
-Example mapping:
-```yaml
+Example Mapping:
 ports:
   - "8000:8000"   # API
   - "8080:8080"   # Adminer
@@ -52,6 +51,14 @@ Configuration-as-code ensures identical startup on any host.
 ---
 
 ## 4. Continous Integration
+
+Two automated workflows run on every push:
+1. **publish-image.yml** – builds and pushes the Docker image to GHCR.
+2. **compose-test.yml** – launches the full Compose cluster and runs test requests.
+
+Both appear as green checkmarks in the GitHub Actions tab.
+
+---
 
 
 
