@@ -65,6 +65,8 @@ Both appear as green checkmarks in the GitHub Actions tab.
 - Repository: ghcr.io/tim16112001/tapasmap-api:latest
 - Automatically built and published by GitHub Actions
 - Package is public and linked to the main repository
+- Screenshot - GHCR package
+  ![GHCR Package](../hito4/ghcr_package.png)
 
 ---
 
