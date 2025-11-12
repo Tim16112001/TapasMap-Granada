@@ -60,6 +60,43 @@ Both appear as green checkmarks in the GitHub Actions tab.
 
 ---
 
+## 5. GHCR Image Publication
 
+- Repository: ghcr.io/tim16112001/tapasmap-api:latest
+- Automatically built and published by GitHub Actions
+- Package is public and linked to the main repository
+
+---
+
+## 6. Verification and Testing
+
+After running: `docker compose up -d`
+
+The API can be tested via: 
+`Invoke-RestMethod -Method POST -Uri http://localhost:8000/api/bars -ContentType "application/json" -Body '{"name":"Bar Compose","city":"Granada"}'
+Invoke-RestMethod -Method GET  -Uri http://localhost:8000/api/bars`
+
+Expected result:
+id name        city
+-- ----        ----
+1  Bar Compose Granada
+
+---
+
+## 7. Documentation and Evidence
+
+- All configuration files: Dockerfile, .dockerignore, compose.yaml
+- CI configuration: .github/workflows/publish-image.yml,.github/workflows/compose-test.yml
+- Screenshots embedded directly (visible above)
+- Source repository linked from the GHCR package
+
+---
+
+## 8. Conclusions
+
+This milestone completes the containerization stage:
+- The TapasMap API can now be built, deployed, and tested reproducibly.
+- The environment is portable and ready for future deployment to cloud platforms.
+  
 
 
