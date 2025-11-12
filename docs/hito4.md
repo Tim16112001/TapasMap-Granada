@@ -83,6 +83,10 @@ id name        city
 -- ----        ----
 1  Bar Compose Granada
 
+Screenshot - CI passed
+
+![CI Passed](https://github.com/Tim16112001/TapasMap-Granada/blob/44e5e6b004ca817b3b9febd3e7d4b5fe2f25413d/docs/ci_green.png)
+
 ---
 
 ## 7. Documentation and Evidence
