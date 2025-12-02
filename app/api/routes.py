@@ -1,30 +1,44 @@
-from fastapi import APIRouter, Depends, HTTPException, Request
-from ..models.schemas import BarCreate, Bar, BarsResponse
-from ..services.repository import BarRepository
-from ..services.logic import create_bar, list_bars
+from fastapi import APIRouter, Depends, Request
+from typing import List
 
-router = APIRouter()
+from app.models.schemas import BarCreate, Bar
+from app.services.logic import create_bar, list_bars
+from app.services.repository import BarRepository
+
+# All API endpoints will be under /api/...
+router = APIRouter(prefix="/api")
+
 
 def get_repo(request: Request) -> BarRepository:
+    """
+    Get the repository instance from app.state.
+    This is our single source of truth for bar data.
+    """
     return request.app.state.repo
 
-@router.post("/bars", response_model=Bar, status_code=201)
-def create_bar_endpoint(payload: BarCreate, repo: BarRepository = Depends(get_repo)):
-    try:
-        entity = create_bar(repo, payload.name, payload.city)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    return Bar(id=entity.id, name=entity.name, city=entity.city)
 
-@router.get("/bars", response_model=BarsResponse)
-def list_bars_endpoint(repo: BarRepository = Depends(get_repo)):
-    items = [Bar(id=b.id, name=b.name, city=b.city) for b in list_bars(repo)]
-    return BarsResponse(items=items)
+@router.post("/bars", status_code=201, response_model=Bar)
+def create_bar_route(
+    bar: BarCreate,
+    repo: BarRepository = Depends(get_repo),
+):
+    """
+    Create a new tapas bar.
+    """
+    created = create_bar(repo, bar.name, bar.city)
+    return created
 
-from fastapi import APIRouter
 
-router = APIRouter()
+from typing import List, Dict
 
-@router.get("/health")
-def health_check():
-    return {"status": "ok"}
+@router.get("/bars")
+def list_bars_route(
+    repo: BarRepository = Depends(get_repo),
+) -> Dict[str, List[Bar]]:
+    """
+    List all tapas bars.
+    Returns a JSON object with an "items" list.
+    """
+    items: List[Bar] = list_bars(repo)
+    return {"items": items}
+
