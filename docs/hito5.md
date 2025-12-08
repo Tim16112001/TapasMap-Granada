@@ -93,7 +93,8 @@ async def log_requests(request: Request, call_next):
 This logs every request with method, path and status code.
 In Render, these logs are visible in the Logs tab in real time.
 
- ![Render logs]()
+ ![Render logs](https://github.com/Tim16112001/TapasMap-Granada/blob/8ac0ba20e3b52b766d33e33b80850712b6b91e94/docs/render_logs.png
+)
 
 ### 5.2 Health Check Endpoint
 
@@ -105,7 +106,8 @@ def health_check():
 This endpoint is publicly accessible at: 
 - https://tapasmap-granada.onrender.com/health
 
- ![Health endpoint]()
+ ![Health endpoint](https://github.com/Tim16112001/TapasMap-Granada/blob/8ac0ba20e3b52b766d33e33b80850712b6b91e94/docs/health_cloud.png
+)
 
 ### 5.3 API Documentation (Swagger)
 
@@ -114,7 +116,7 @@ FastAPI automatically generates interactive API documentation:
 
 This allows checking the available endpoints (/api/bars) and testing them interactively.
 
- ![Swagger UI]()
+ ![Swagger UI](https://github.com/Tim16112001/TapasMap-Granada/blob/8ac0ba20e3b52b766d33e33b80850712b6b91e94/docs/swagger_cloud.png)
 
 ---
 
@@ -136,7 +138,8 @@ Invoke-RestMethod -Method GET -Uri https://tapasmap-granada.onrender.com/api/bar
 
 The response contained the created bar with status codes 201 (POST) and 200 (GET), confirming that the backend logic works correctly in the PaaS environment.
 
- ![API calls]()
+ ![API calls](https://github.com/Tim16112001/TapasMap-Granada/blob/8ac0ba20e3b52b766d33e33b80850712b6b91e94/docs/api_calls_cloud.png
+)
 
 ---
 
@@ -162,7 +165,8 @@ Observations:
 - Latency per request was well below one second from the client perspective.
 - Render did not report any errors or restarts in the Logs tab.
 
- ![Load test]()
+ ![Load test](https://github.com/Tim16112001/TapasMap-Granada/blob/8ac0ba20e3b52b766d33e33b80850712b6b91e94/docs/loadtest_shell.png
+)
 
 ---
 
