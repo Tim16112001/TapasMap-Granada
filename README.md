@@ -39,7 +39,8 @@ For Hito 2, the following tasks have been completed:
 - Configured GitHub Actions workflow (`.github/workflows/python-tests.yml`) to automatically run tests on every push
 - Ran tests locally to ensure they pass successfully
 - Verified that tests run automatically in GitHub Actions (CI), as shown by the green check mark
-- Full Hito 2 documentation is available in [`docs/hito2.md`](docs/hito2.md)
+
+Full Hito 2 documentation is available in [`docs/hito2.md`](docs/hito2.md)
 
 ---
 
@@ -53,7 +54,8 @@ For Hito 3, the following tasks have been completed:
 - Added API + logic tests with pytest
 - Introduced Makefile for unified local and CI execution
 - CI workflow now runs `make ci`
-- See full documentation: [`docs/hito3.md`](docs/hito3.md)
+
+See full documentation: [`docs/hito3.md`](docs/hito3.md)
 
 ---
 
@@ -65,11 +67,21 @@ For Hito 4, the following tasks have been completed:
 - Multi-container setup via `compose.yaml` (API + PostgreSQL + Adminer)
 - Automatic image publishing to GHCR
 - CI workflows: build & push + compose cluster test
-- See full documentation: [docs/hito4.md](docs/hito4.md)
+
+See full documentation: [docs/hito4.md](docs/hito4.md)
 
 ---
 
 ## Hito 5 – Cloud Deployment
+
+- Platform: Render (PaaS, EU region)
+- Deployed API URL: https://tapasmap-granada.onrender.com
+- Automatic deployment triggered on git push to `main`
+- Observability: request logging, `/health` endpoint, Render logs dashboard
+- Basic load tests executed against the cloud deployment
+
+See full documentation: [docs/hito5.md](docs/hito5.md)
+
 
 ## License
 
