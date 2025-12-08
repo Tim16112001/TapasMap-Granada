@@ -93,6 +93,8 @@ async def log_requests(request: Request, call_next):
 This logs every request with method, path and status code.
 In Render, these logs are visible in the Logs tab in real time.
 
+ ![Render logs]()
+
 ### 5.2 Health Check Endpoint
 
 To check that the application is alive, a simple health route is exposed in app/main.py:
@@ -103,6 +105,7 @@ def health_check():
 This endpoint is publicly accessible at: 
 - https://tapasmap-granada.onrender.com/health
 
+ ![Health endpoint]()
 
 ### 5.3 API Documentation (Swagger)
 
@@ -110,6 +113,8 @@ FastAPI automatically generates interactive API documentation:
 - https://tapasmap-granada.onrender.com/docs
 
 This allows checking the available endpoints (/api/bars) and testing them interactively.
+
+ ![Swagger UI]()
 
 ---
 
@@ -130,6 +135,8 @@ Invoke-RestMethod `
 Invoke-RestMethod -Method GET -Uri https://tapasmap-granada.onrender.com/api/bars
 
 The response contained the created bar with status codes 201 (POST) and 200 (GET), confirming that the backend logic works correctly in the PaaS environment.
+
+ ![API calls]()
 
 ---
 
@@ -154,6 +161,8 @@ Observations:
 - The API remained responsive during the test.
 - Latency per request was well below one second from the client perspective.
 - Render did not report any errors or restarts in the Logs tab.
+
+ ![Load test]()
 
 ---
 
