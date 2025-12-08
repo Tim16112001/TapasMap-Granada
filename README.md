@@ -67,6 +67,10 @@ For Hito 4, the following tasks have been completed:
 - CI workflows: build & push + compose cluster test
 - See full documentation: [docs/hito4.md](docs/hito4.md)
 
+---
+
+## Hito 5 – Cloud Deployment
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
