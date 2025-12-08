@@ -1,0 +1,44 @@
+name: Compose Cluster Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  compose-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build images
+        run: docker compose build
+
+      - name: Start compose stack
+        run: |
+          docker compose up -d
+          # Warten bis API bereit ist (port 8001 extern, 8000 intern)
+          for i in {1..60}; do
+            if curl -fsS http://localhost:8001/api/bars >/dev/null; then
+              echo "API is up"; break
+            fi
+            echo "Waiting for API... ($i)"
+            sleep 2
+          done
+
+      - name: Smoke test API
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq
+          curl -fsS -X POST http://localhost:8001/api/bars \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Bar CI","city":"Granada"}'
+          curl -fsS http://localhost:8001/api/bars | tee output.json
+          jq '.items | length' output.json | grep -E '^[1-9][0-9]*$'
+
+      - name: Shutdown
+        if: always()
+        run: docker compose down -v
