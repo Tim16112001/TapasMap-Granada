@@ -122,9 +122,18 @@ This allows checking the available endpoints (/api/bars) and testing them intera
 
 ## 6. Functional Tests on the Deployed Application
 
-To verify that the API works correctly in the cloud, I executed the following requests from my local machine:
+To verify that the API works correctly in the cloud environment, I executed several requests from my local machine against the deployed Render service.
 
-### 6.1 Create a bar in the cloud
+### 6.1 Health Check
+
+```powershell
+Invoke-RestMethod -Method GET -Uri https://tapasmap-granada.onrender.com/health
+
+The response was: {"status":"ok"}
+
+This confirms that the service is running correctly in the cloud.
+
+### 6.2 Create a Bar in the Cloud
 
 Invoke-RestMethod `
   -Method POST `
@@ -132,18 +141,27 @@ Invoke-RestMethod `
   -ContentType "application/json" `
   -Body '{"name":"Cloud Bar","city":"Granada"}'
 
-### 6.2 List all bars in the cloud
+The API returned status code 201 Created and the created bar object.
+
+### 6.3 List All Bars in the Cloud
 
 Invoke-RestMethod -Method GET -Uri https://tapasmap-granada.onrender.com/api/bars
 
-The response contained the created bar with status codes 201 (POST) and 200 (GET), confirming that the backend logic works correctly in the PaaS environment.
+The response contained the previously created bar inside the items list, confirming that persistence and retrieval work correctly in the deployed environment.
 
- ![API calls](https://github.com/Tim16112001/TapasMap-Granada/blob/8ac0ba20e3b52b766d33e33b80850712b6b91e94/docs/api_calls_cloud.png
-)
+### 6.4 Rate a Bar in the Cloud
 
+Invoke-RestMethod `
+  -Method POST `
+  -Uri https://tapasmap-granada.onrender.com/api/bars/1/rating `
+  -ContentType "application/json" `
+  -Body '{"rating":5}'
+
+The API returned the updated bar including the calculated average rating, confirming that the business logic for ratings works correctly in production.
+The successful execution of these requests demonstrates that the deployed application behaves correctly in the PaaS environment and that the core business functionality works as expected.
 ---
 
-## 7. Performance and Load Tests
+### 7. Performance and Load Tests
 
 To perform a simple performance test, I sent multiple POST requests in a short time frame:
 
