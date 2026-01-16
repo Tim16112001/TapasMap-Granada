@@ -5,6 +5,7 @@ from app.services.repository import InMemoryBarRepository
 
 router = APIRouter(prefix="/api")
 
+# Singleton repo (in-memory)
 _repo = InMemoryBarRepository()
 
 def get_repo():
@@ -29,3 +30,4 @@ def rate_bar_route(bar_id: int, data: RatingCreate, repo=Depends(get_repo)):
         raise HTTPException(status_code=400, detail=str(e))
     except KeyError:
         raise HTTPException(status_code=404, detail="Bar not found")
+
